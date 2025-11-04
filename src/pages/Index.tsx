@@ -8,6 +8,7 @@ const Index = () => {
   const { theme, setTheme } = useTheme();
   const apps = [
     {
+      id: "taskflow",
       title: "TaskFlow Pro",
       description: "Streamline your workflow with intelligent task management, real-time collaboration, and seamless team coordination.",
       image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=800&fit=crop",
@@ -16,6 +17,7 @@ const Index = () => {
       reverse: false
     },
     {
+      id: "fittrack",
       title: "FitTrack",
       description: "Your personal fitness companion with workout tracking, nutrition logging, and AI-powered health recommendations.",
       image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=800&fit=crop",
@@ -24,6 +26,7 @@ const Index = () => {
       reverse: true
     },
     {
+      id: "walletwise",
       title: "WalletWise",
       description: "Take control of your finances with smart expense tracking, automated budgeting, and insightful financial analytics.",
       image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=800&fit=crop",
@@ -32,6 +35,7 @@ const Index = () => {
       reverse: false
     },
     {
+      id: "socialhub",
       title: "SocialHub",
       description: "Connect meaningfully with friends and family through an elegant platform for sharing moments and real-time messaging.",
       image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=800&fit=crop",
@@ -40,6 +44,7 @@ const Index = () => {
       reverse: true
     },
     {
+      id: "recipebox",
       title: "RecipeBox",
       description: "Discover and save delicious recipes with step-by-step instructions, smart ingredient tracking, and meal planning.",
       image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400&h=800&fit=crop",
@@ -48,6 +53,7 @@ const Index = () => {
       reverse: false
     },
     {
+      id: "mindfulmoments",
       title: "MindfulMoments",
       description: "Find peace and balance with guided meditation sessions, breathing exercises, and mindfulness tracking.",
       image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=800&fit=crop",
@@ -94,7 +100,7 @@ const Index = () => {
 
       {/* Apps Sections */}
       {apps.map((app, index) => (
-        <AppSection key={index} {...app} id={`app-${index}`} />
+        <AppSection key={index} {...app} id={`app-${index}`} appId={app.id} />
       ))}
 
       {/* Footer */}

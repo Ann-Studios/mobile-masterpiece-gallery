@@ -2,20 +2,14 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { Button } from "@/components/ui/button";
 import { Menu, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import { Link } from "react-router-dom";
 
 interface MobileMenuProps {
-  apps: Array<{ title: string }>;
+  apps: Array<{ title: string; id: string }>;
 }
 
 const MobileMenu = ({ apps }: MobileMenuProps) => {
   const { theme, setTheme } = useTheme();
-
-  const scrollToSection = (index: number) => {
-    const element = document.getElementById(`app-${index}`);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
 
   return (
     <Sheet>
@@ -47,14 +41,16 @@ const MobileMenu = ({ apps }: MobileMenuProps) => {
 
           {/* App Links */}
           <div className="space-y-2">
-            {apps.map((app, index) => (
+            {apps.map((app) => (
               <Button
-                key={index}
+                key={app.id}
                 variant="ghost"
                 className="w-full justify-start text-left"
-                onClick={() => scrollToSection(index)}
+                asChild
               >
-                {app.title}
+                <Link to={`/app/${app.id}`}>
+                  {app.title}
+                </Link>
               </Button>
             ))}
           </div>

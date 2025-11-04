@@ -1,4 +1,7 @@
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface AppSectionProps {
   title: string;
@@ -8,9 +11,10 @@ interface AppSectionProps {
   gradient: string;
   reverse: boolean;
   id: string;
+  appId: string;
 }
 
-const AppSection = ({ title, description, image, features, gradient, reverse, id }: AppSectionProps) => {
+const AppSection = ({ title, description, image, features, gradient, reverse, id, appId }: AppSectionProps) => {
   return (
     <section 
       id={id}
@@ -52,6 +56,18 @@ const AppSection = ({ title, description, image, features, gradient, reverse, id
                 {feature}
               </Badge>
             ))}
+          </div>
+          <div className="pt-4">
+            <Button 
+              size="lg" 
+              className="bg-foreground text-background hover:bg-foreground/90"
+              asChild
+            >
+              <Link to={`/app/${appId}`}>
+                Learn More
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+            </Button>
           </div>
         </div>
       </div>
