@@ -1,8 +1,11 @@
 import AppSection from "@/components/AppSection";
+import MobileMenu from "@/components/MobileMenu";
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const Index = () => {
+  const { theme, setTheme } = useTheme();
   const apps = [
     {
       title: "TaskFlow Pro",
@@ -60,9 +63,20 @@ const Index = () => {
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-foreground">My Apps</h1>
-          <Button variant="ghost" size="icon">
-            <Menu className="w-6 h-6" />
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            >
+              {theme === "dark" ? (
+                <Sun className="w-5 h-5" />
+              ) : (
+                <Moon className="w-5 h-5" />
+              )}
+            </Button>
+            <MobileMenu apps={apps} />
+          </div>
         </div>
       </nav>
 
@@ -80,7 +94,7 @@ const Index = () => {
 
       {/* Apps Sections */}
       {apps.map((app, index) => (
-        <AppSection key={index} {...app} />
+        <AppSection key={index} {...app} id={`app-${index}`} />
       ))}
 
       {/* Footer */}

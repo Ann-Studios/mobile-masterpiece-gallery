@@ -7,12 +7,14 @@ interface AppSectionProps {
   features: string[];
   gradient: string;
   reverse: boolean;
+  id: string;
 }
 
-const AppSection = ({ title, description, image, features, gradient, reverse }: AppSectionProps) => {
+const AppSection = ({ title, description, image, features, gradient, reverse, id }: AppSectionProps) => {
   return (
     <section 
-      className="py-20 px-6"
+      id={id}
+      className="py-20 px-6 scroll-mt-20"
       style={{ background: gradient }}
     >
       <div className={`container mx-auto flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-12 md:gap-20`}>
