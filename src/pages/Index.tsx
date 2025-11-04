@@ -68,7 +68,7 @@ const Index = () => {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-foreground">My Apps</h1>
+          <h1 className="text-2xl font-bold text-foreground">mobile showcase</h1>
           <div className="flex items-center gap-2">
             <Button
               variant="ghost"
@@ -89,9 +89,6 @@ const Index = () => {
       {/* Hero Section */}
       <section className="py-20 px-6">
         <div className="container mx-auto text-center">
-          <h2 className="text-5xl md:text-7xl font-black mb-6 text-foreground">
-            Mobile Apps
-          </h2>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12">
             Beautiful and functional mobile applications crafted with care
           </p>
