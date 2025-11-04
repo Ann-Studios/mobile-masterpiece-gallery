@@ -104,7 +104,7 @@ const Index = () => {
       <footer className="py-16 px-6 mt-20 border-t border-border">
         <div className="container mx-auto text-center">
           <p className="text-muted-foreground">
-            © 2024 Mobile App Portfolio. Built with passion and code.
+            © 2025 Mobile App Portfolio. Built by <a href="https://github.com/graciari2000">graciari2000</a>.
           </p>
         </div>
       </footer>
